@@ -1,0 +1,1 @@
+ALTER TABLE `tabla_demo` ADD `valor` INT NOT NULL AFTER `apellidos`;

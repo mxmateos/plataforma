@@ -58,6 +58,40 @@ hr {
 	<tr>
 		<td><?php echo $row->nombres;?></td>
 		<td><?php echo $row->apellidos;?></td>
+
+		<td>
+		<?php
+		if ($row->valor == 0) {
+			?>
+			<a href="editar_boton.php?id=<?php echo $row->id; ?>&valor=<?php echo $row->valor; ?>">
+				<button style='background-color:cyan' >Button</button>
+			</a>
+			<?php
+		}
+		if ($row->valor ==1) {
+			?>
+			<a href="editar_boton.php?id=<?php echo $row->id; ?>&valor=<?php echo $row->valor; ?>">
+				<button style='background-color:red' >Button</button>
+			</a>			<?php
+		}
+		if ($row->valor == 2) {
+			?>
+			<a href="editar_boton.php?id=<?php echo $row->id; ?>&valor=<?php echo $row->valor; ?>">
+				<button style='background-color:yellow' >Button</button>
+			</a>			<?php
+		}
+		if ($row->valor == 3) {
+			?>
+			<a href="editar_boton.php?id=<?php echo $row->id; ?>&valor=<?php echo $row->valor; ?>">
+			&nbsp;
+			</a>
+		<?php
+		}
+		?>
+
+			
+        </td>
+
 		<td>
 <a class="btn btn-primary" href="editar.php?id=<?php echo $row->id; ?>">
 <i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
@@ -68,3 +102,4 @@ hr {
 </div>
 </body>
 </html>
+
