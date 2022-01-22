@@ -53,7 +53,6 @@ hr {
 <?php 
 	$sql = "select * from tabla_demo";
 	$result = db_query($sql);
-	var_dump($result);
 	while($row = mysqli_fetch_object($result)){
 	?>
 	<tr>
