@@ -41,6 +41,7 @@ hr {
 <br><br>
 <?php 
 include("function.php");
+include("conexion.php");
 $id = $_GET['id'];
 select_id('tabla_demo','id',$id);
 ?>
