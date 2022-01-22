@@ -1,10 +1,4 @@
 <?php
-function db_query($query) {
-    $connection = mysqli_connect("localhost","root","root","baul");
-    $result = mysqli_query($connection,$query);
-
-    return $result;
-}
 
 function edit($tblname,$form_data,$field_id,$id){
 	$sql = "UPDATE ".$tblname." SET ";
