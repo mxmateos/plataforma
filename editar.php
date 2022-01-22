@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Editar Mysql mediante Funcion</title>
+<title>Editar Registros Mysql Mediante Funcion</title>
 <link type="text/css" href="bootstrap.min.css" rel="stylesheet">
 <link type="text/css" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
 <style>
@@ -39,31 +39,26 @@ hr {
 <div class="main-wrapper">
 <h1>Editar Registros con Función PHP </h1>
 <br><br>
+<?php 
+include("function.php");
+$id = $_GET['id'];
+select_id('tabla_demo','id',$id);
+?>
+<form action="" method="post">
+	<input type="text" value="<?php echo $row->nombres;?>" name="nombres">
+	<input type="text" value="<?php echo $row->apellidos;?>" name="apellidos">
+	<input type="submit" name="submit">
+</form>
 
 <?php
-	include("function.php");
+	
+	if(isset($_POST['submit'])){
+		$field = array("nombres"=>$_POST['nombres'], "apellidos"=>$_POST['apellidos']);
+		$tbl = "tabla_demo";
+		edit($tbl,$field,'id',$id);
+		header("location:index.php");
+	}
 ?>
-<table border="1" width="100%">
-	<tr>
-		<th width="41%">Nombres</th>
-		<th width="47%">Apellidos</th>
-		<th width="12%">Opcion</th>
-	</tr>
-<?php 
-	$sql = "select * from tabla_demo";
-	$result = db_query($sql);
-	while($row = mysqli_fetch_object($result)){
-	?>
-	<tr>
-		<td><?php echo $row->nombres;?></td>
-		<td><?php echo $row->apellidos;?></td>
-		<td>
-<a class="btn btn-primary" href="editar.php?id=<?php echo $row->id; ?>">
-<i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
-        </td>
-	</tr>
-	<?php } ?>
-</table>
 </div>
 </body>
 </html>
