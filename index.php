@@ -1,3 +1,5 @@
+
+
 <!doctype html>
 <html>
 <head>
@@ -5,6 +7,10 @@
 <title>Editar Mysql mediante Funcion</title>
 <link type="text/css" href="bootstrap.min.css" rel="stylesheet">
 <link type="text/css" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
 <style>
 table {
     border-collapse: collapse;
@@ -56,39 +62,34 @@ hr {
 	while($row = mysqli_fetch_object($result)){
 	?>
 	<tr>
-		<td><?php echo $row->nombres;?></td>
+		<td>  <a href="#aa" valorr="<?php echo $row->nombres; ?>"   >
+			    <?php echo $row->nombres;?>  </a>   </td>
 		<td><?php echo $row->apellidos;?></td>
 
 		<td>
 		<?php
 		if ($row->valor == 0) {
 			?>
-			<a href="editar_boton.php?id=<?php echo $row->id; ?>&valor=<?php echo $row->valor; ?>">
+			<a href="editar_boton.php?id=<?php echo $row->id; ?>&valor=<?php echo $row->valor; ?>"   >
 				<button style='background-color:cyan' >Button</button>
 			</a>
+
 			<?php
 		}
 		if ($row->valor ==1) {
 			?>
 			<a href="editar_boton.php?id=<?php echo $row->id; ?>&valor=<?php echo $row->valor; ?>">
-				<button style='background-color:red' >Button</button>
+				<button style='background-color:green' >Button</button>
 			</a>			<?php
 		}
 		if ($row->valor == 2) {
 			?>
 			<a href="editar_boton.php?id=<?php echo $row->id; ?>&valor=<?php echo $row->valor; ?>">
-				<button style='background-color:yellow' >Button</button>
-			</a>			<?php
+				&nbsp;
+			</a>	<?php
 		}
-		if ($row->valor == 3) {
 			?>
-			<a href="editar_boton.php?id=<?php echo $row->id; ?>&valor=<?php echo $row->valor; ?>">
-			&nbsp;
-			</a>
-		<?php
-		}
-		?>
-
+			
 			
         </td>
 
@@ -100,6 +101,103 @@ hr {
 	<?php } ?>
 </table>
 </div>
+
+
+<li><a href="#aa" valorr="EURUSD">María Romero</a></li>
+
+
+
+						<div class="modal fade" id="modal-id">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+										<h4 class="modal-title">Modal title</h4>
+									</div>
+									<div class="modal-body">
+										<h1>
+										ID del Estudiante es: <span class="ids" ></span>
+										</h1>
+
+
+													<h3>A demonstration of how to access a SPAN element</h3>
+
+													<p>My mother has <span id="mySpan" class="ids" style="color:blue;">blue</span> eyes.</p>
+
+													<p>Click the button to get the color of the span element.</p>
+
+													
+
+													<p id="demo"></p>
+
+
+
+										
+
+										<!-- TradingView Widget BEGIN -->
+										<div class="tradingview-widget-container">
+										<div id="tradingview_beba2"></div>
+										<div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/NASDAQ-AAPL/" rel="noopener" target="_blank"><span class="blue-text">AAPL Chart</span></a> by TradingView</div>
+										<script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+										<script type="text/javascript">
+
+										variable111 = "GBPCAD";
+			
+
+										</script>
+										</div>
+										<!-- TradingView Widget END -->
+									
+
+
+
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+										<button type="button" class="btn btn-primary">Save changes</button>
+									</div>
+								</div>
+							</div>
+						</div>
+
+
+
+
 </body>
 </html>
 
+<script>
+
+$(function(){
+	$('a[href="#aa"]').click(function(e){
+  	e.preventDefault();
+    var id = $(this).attr('valorr');
+    $(".ids").html(id);
+    $("#modal-id").modal('show');
+	var variable111 = document.getElementsByClassName("ids")[0].innerText;
+
+
+										new TradingView.widget(
+										{
+										"width": 980,
+										"height": 610,
+										"symbol": variable111,
+										"interval": "D",
+										"timezone": "Etc/UTC",
+										"theme": "dark",
+										"style": "1",
+										"locale": "en",
+										"toolbar_bg": "#f1f3f6",
+										"enable_publishing": false,
+										"allow_symbol_change": true,
+										"container_id": "tradingview_beba2"
+										}
+										);
+
+
+
+
+  })
+})
+
+</script>
