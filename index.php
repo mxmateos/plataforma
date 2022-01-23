@@ -103,8 +103,6 @@ hr {
 </div>
 
 
-<li><a href="#aa" valorr="EURUSD">María Romero</a></li>
-
 
 
 						<div class="modal fade" id="modal-id">
@@ -112,27 +110,15 @@ hr {
 								<div class="modal-content">
 									<div class="modal-header">
 										<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-										<h4 class="modal-title">Modal title</h4>
+										<h4 class="modal-title">Grafico:</h4>
 									</div>
 									<div class="modal-body">
-										<h1>
-										ID del Estudiante es: <span class="ids" ></span>
-										</h1>
-
-
-													<h3>A demonstration of how to access a SPAN element</h3>
-
-													<p>My mother has <span id="mySpan" class="ids" style="color:blue;">blue</span> eyes.</p>
-
-													<p>Click the button to get the color of the span element.</p>
-
-													
-
-													<p id="demo"></p>
-
-
-
 										
+									
+										<p>
+										grafico: <span class="ids" ></span>
+										</p>
+
 
 										<!-- TradingView Widget BEGIN -->
 										<div class="tradingview-widget-container">
@@ -140,9 +126,6 @@ hr {
 										<div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/NASDAQ-AAPL/" rel="noopener" target="_blank"><span class="blue-text">AAPL Chart</span></a> by TradingView</div>
 										<script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
 										<script type="text/javascript">
-
-										variable111 = "GBPCAD";
-			
 
 										</script>
 										</div>
@@ -152,10 +135,7 @@ hr {
 
 
 									</div>
-									<div class="modal-footer">
-										<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-										<button type="button" class="btn btn-primary">Save changes</button>
-									</div>
+				
 								</div>
 							</div>
 						</div>
